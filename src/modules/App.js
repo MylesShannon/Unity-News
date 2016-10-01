@@ -1,18 +1,22 @@
-// require('styles/App.css');
+require('normalize.css/normalize.css');
+require('styles/Bootstrap.less');
+require('styles/App.css');
 
 import React from 'react';
+import { Grid } from 'react-bootstrap';
 
+import Home from './Home';
 import Nav from '../components/Nav';
 
-class IndexComponent extends React.Component {
+class AppModule extends React.Component {
   render() {
     return (
       <div>
         <Nav />
-        <div className="container">{this.props.children || <Home/>}</div>
+        <Grid>{this.props.children || <Home/>}</Grid>
       </div>
     );
   }
 }
 
-export default IndexComponent;
+export default AppModule;
