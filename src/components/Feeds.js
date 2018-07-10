@@ -1,5 +1,7 @@
 import React from 'react';
 import jquery from 'jquery';
+import config from 'config';
+
 import { LinkContainer} from 'react-router-bootstrap';
 import { Panel, ListGroup, ListGroupItem, Button } from 'react-bootstrap';
 
@@ -12,7 +14,7 @@ class FeedComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.request = jquery.get('http://localhost:8002/api/v1/feeds', (result) => {
+    this.request = jquery.get(config.api+'/api/v1/feeds', (result) => {
       this.setState({feeds: result});
     });
   }
