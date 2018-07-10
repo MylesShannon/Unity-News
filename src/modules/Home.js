@@ -32,7 +32,7 @@ class HomeModule extends React.Component {
       selectedArticles = allArticles;
     } else {
       for(let a of allArticles) {
-        if(a._feed.id === selectedId) {
+        if(a['_feed'] && a['_feed'].id === selectedId) {
           selectedArticles.push(a);
         }
       }
